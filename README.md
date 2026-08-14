@@ -70,3 +70,145 @@ Masked Recall@20 (Model): 0.1980
 Masked Recall@20 (Pop)  : 0.0809
 Lift (abs): +0.1171
 Lift (rel): +144.79%
+
+python goodbooks_two_tower_pytorch.py \
+  --ratings ratings.csv \
+  --min-rating 3 \
+  --min-user-interactions 10 \
+  --min-item-interactions 10 \
+  --dim 128 \
+  --epochs 12 \
+  --batch-size 4096 \
+  --lr 1e-3 \
+  --temperature 0.10 \
+  --pop-bias-scale 2.0 \
+  --target-recall 0.20
+
+Epoch 01/12 loss=7.7626 time=39.0s
+Validation masked Recall@20: 0.1689
+Epoch 02/12 loss=7.0874 time=37.8s
+Validation masked Recall@20: 0.2067
+Epoch 03/12 loss=6.9097 time=37.9s
+Validation masked Recall@20: 0.2293
+Epoch 04/12 loss=6.8050 time=38.0s
+Validation masked Recall@20: 0.2454
+Epoch 05/12 loss=6.7323 time=38.7s
+Validation masked Recall@20: 0.2586
+Epoch 06/12 loss=6.6790 time=37.8s
+Validation masked Recall@20: 0.2662
+Epoch 07/12 loss=6.6381 time=38.6s
+Validation masked Recall@20: 0.2731
+Epoch 08/12 loss=6.6063 time=38.6s
+Validation masked Recall@20: 0.2800
+Epoch 09/12 loss=6.5813 time=38.4s
+Validation masked Recall@20: 0.2835
+Epoch 10/12 loss=6.5613 time=41.5s
+Validation masked Recall@20: 0.2881
+Epoch 11/12 loss=6.5452 time=47.1s
+Validation masked Recall@20: 0.2908
+Epoch 12/12 loss=6.5313 time=50.6s
+Validation masked Recall@20: 0.2911
+Best validation masked Recall@20: 0.2911
+
+python goodbooks_two_tower_pytorch.py \
+  --ratings ratings.csv \
+  --min-rating 3 \
+  --min-user-interactions 10 \
+  --min-item-interactions 10 \
+  --dim 192 \
+  --epochs 12 \
+  --batch-size 4096 \
+  --lr 1e-3 \
+  --temperature 0.08 \
+  --pop-bias-scale 2.0 \
+  --target-recall 0.35
+
+  Epoch 01/12 loss=7.6934 time=41.7s
+Validation masked Recall@20: 0.1752
+Epoch 02/12 loss=7.0255 time=39.8s
+Validation masked Recall@20: 0.2193
+Epoch 03/12 loss=6.8250 time=39.5s
+Validation masked Recall@20: 0.2493
+Epoch 04/12 loss=6.6953 time=39.9s
+Validation masked Recall@20: 0.2669
+Epoch 05/12 loss=6.6065 time=40.1s
+Validation masked Recall@20: 0.2798
+Epoch 06/12 loss=6.5433 time=40.1s
+Validation masked Recall@20: 0.2894
+Epoch 07/12 loss=6.4956 time=40.2s
+Validation masked Recall@20: 0.2948
+Epoch 08/12 loss=6.4576 time=40.1s
+Validation masked Recall@20: 0.3006
+Epoch 09/12 loss=6.4265 time=40.0s
+Validation masked Recall@20: 0.3045
+Epoch 10/12 loss=6.4007 time=40.0s
+Validation masked Recall@20: 0.3095
+Epoch 11/12 loss=6.3794 time=39.5s
+Validation masked Recall@20: 0.3118
+Epoch 12/12 loss=6.3616 time=40.0s
+Validation masked Recall@20: 0.3140
+Best validation masked Recall@20: 0.3140
+
+python goodbooks_two_tower_pytorch.py --ratings ratings.csv
+Epoch 01/12 loss=7.7626 time=40.2s
+Validation masked Recall@20: 0.1689
+Epoch 02/12 loss=7.0874 time=37.6s
+Validation masked Recall@20: 0.2067
+Target reached: Recall@20 >= 0.20
+Best validation masked Recall@20: 0.2067
+
+
+python goodbooks_two_tower_pytorch.py \
+  --ratings ratings.csv \
+  --min-rating 3 \
+  --min-user-interactions 10 \
+  --min-item-interactions 10 \
+  --dim 192 \
+  --epochs 20 \
+  --batch-size 4096 \
+  --lr 1e-3 \
+  --temperature 0.08 \
+  --pop-bias-scale 2.0 \
+  --target-recall 0.35
+
+Epoch 02/20 loss=7.0255 time=39.6s
+Validation masked Recall@20: 0.2193
+Epoch 03/20 loss=6.8250 time=39.5s
+Validation masked Recall@20: 0.2493
+Epoch 04/20 loss=6.6953 time=39.3s
+Validation masked Recall@20: 0.2669
+Epoch 05/20 loss=6.6065 time=39.6s
+Validation masked Recall@20: 0.2798
+Epoch 06/20 loss=6.5433 time=39.4s
+Validation masked Recall@20: 0.2894
+Epoch 07/20 loss=6.4956 time=39.5s
+Validation masked Recall@20: 0.2948
+Epoch 08/20 loss=6.4576 time=39.5s
+Validation masked Recall@20: 0.3006
+Epoch 09/20 loss=6.4265 time=39.4s
+Validation masked Recall@20: 0.3045
+Epoch 10/20 loss=6.4007 time=39.5s
+Validation masked Recall@20: 0.3095
+Epoch 11/20 loss=6.3794 time=39.1s
+Validation masked Recall@20: 0.3118
+Epoch 12/20 loss=6.3616 time=39.3s
+Validation masked Recall@20: 0.3140
+Epoch 13/20 loss=6.3460 time=39.2s
+Validation masked Recall@20: 0.3164
+Epoch 14/20 loss=6.3329 time=39.4s
+Validation masked Recall@20: 0.3197
+Epoch 15/20 loss=6.3212 time=39.1s
+Validation masked Recall@20: 0.3201
+Epoch 16/20 loss=6.3106 time=39.6s
+Validation masked Recall@20: 0.3193
+Epoch 17/20 loss=6.3014 time=39.4s
+Validation masked Recall@20: 0.3208
+Epoch 18/20 loss=6.2932 time=39.7s
+Validation masked Recall@20: 0.3235
+Epoch 19/20 loss=6.2854 time=39.4s
+Validation masked Recall@20: 0.3247
+Epoch 20/20 loss=6.2786 time=39.2s
+Validation masked Recall@20: 0.3232
+Best validation masked Recall@20: 0.3247  
+
+  
