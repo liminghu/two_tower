@@ -1,0 +1,12 @@
+  python goodbooks_two_tower_pytorch.py \
+  --ratings ratings.csv \
+  --min-rating 3 \
+  --min-user-interactions 10 \
+  --min-item-interactions 10 \
+  --dim 192 \
+  --epochs 20 \
+  --batch-size 4096 \
+  --lr 1e-3 \
+  --temperature 0.08 \
+  --pop-bias-scale 2.0 \
+  --target-recall 0.35

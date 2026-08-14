@@ -1,0 +1,1 @@
+python goodbooks_two_tower_pytorch.py --ratings ratings.csv
