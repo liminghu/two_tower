@@ -1,6 +1,7 @@
 # two_tower
 Two Tower model tutorial and comparison with other models on goodbooks-10k data.
 
+The goodbooks-10k dataset is a popular benchmark collection for building book recommendation systems. Created by Zygmunt Zając, it contains 6 million ratings for the 10,000 most popular books from 53,424 users. Ratings range from 1 to 5, and users have rated at least two books.Core Files & Structureratings.csv: Contains 6 million numerical user-to-book rating pairs (scaled 1 to 5) sorted chronologically. Both user and book IDs are contiguous integers (users: 1–53,424; books: 1–10,000).books.csv: Provides metadata for each of the 10,000 books, including authors, publication years, titles, and average Goodreads ratings.to_read.csv: Tracks approximately 1 million user-to-book interactions where users have marked books on their "to-read" shelves.book_tags.csv / tags.csv: Captures user-generated tags, genres, and shelf categories assigned to the books.Key CharacteristicsPopularity Bias: It focuses specifically on the top 10,000 most-rated books on the platform rather than obscure or long-tail titles.Data Density: Most books contain roughly 100 reviews, providing a dense interaction matrix well-suited for collaborative filtering and matrix factorization algorithms.
 
 ease_goodbooks_anthropic.py
 Users: 53424, Items: 10000
