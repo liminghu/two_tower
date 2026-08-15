@@ -256,4 +256,23 @@ Validation masked Recall@20: 0.3232
 
 Best validation masked Recall@20: 0.3247  
 
-  
+python goodbooks_two_tower_pytorch.py   --ratings ratings.csv   --min-rating 3   --min-user-interactions 10   --min-item-interactions 10   --dim 192   --epochs 40   --batch-size 4096   --lr 1e-3   --temperature 0.08   --pop-bias-scale 2.0   --target-recall 0.35
+Device: cuda
+Loading and filtering GoodBooks-10k ratings...
+Creating masked validation split...
+Users: 53,399
+Books: 9,998
+Train interactions: 5,439,532
+Validation users: 53,399
+/workspaces/LLMs-from-scratch/two_tower/goodbooks_two_tower_pytorch.py:366: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  torch.as_tensor(arr, dtype=torch.long, device=device)
+/workspaces/LLMs-from-scratch/two_tower/goodbooks_two_tower_pytorch.py:413: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler(enabled=use_amp) if use_amp else None
+Trainable parameters: 12,293,006
+Batch size: 4,096
+AMP enabled: True
+
+Epoch 40/40 loss=6.2068 time=40.7s
+Validation masked Recall@20: 0.3339
+
+Best validation masked Recall@20: 0.3339
